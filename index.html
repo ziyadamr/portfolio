@@ -3,66 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ziyad Amr | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Ziyad Amr | AI Engineer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans scroll-smooth">
+<body>
 
-    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold tracking-tight text-blue-400">Ziyad Amr</h1>
-            <div class="space-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-blue-400 transition">About</a>
-                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
-                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
-            </div>
+    <nav>
+        <div class="container navbar">
+            <div class="logo">ZIYAD AMR</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
-    <section id="about" class="flex flex-col items-center justify-center py-24 text-center px-6">
-        <div class="w-28 h-28 bg-gradient-to-tr from-blue-600 to-emerald-400 rounded-3xl mb-8 rotate-3 flex items-center justify-center text-5xl shadow-2xl">
-            <span class="-rotate-3">👨‍💻</span>
+    <header id="about" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-placeholder">👨‍💻</div>
+                <h1>Hi, I'm <span>Ziyad Amr</span></h1>
+                <h3>AI Engineer & CS Student</h3>
+                <p>A second-year Computer Science student at Misr Higher Institute for Commerce & Computers[cite: 5, 9]. I am passionate about the endless possibilities of Artificial Intelligence, focusing on solving complex problems and building smart systems[cite: 5, 6].</p>
+                <div class="hero-btns">
+                    <a href="https://github.com/ziyadamr" target="_blank" class="btn primary-btn"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                </div>
+            </div>
         </div>
-        <h2 class="text-6xl font-black mb-6 tracking-tight">
-            Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Ziyad Amr</span>
-        </h2>
-        <p class="text-slate-400 text-xl max-w-2xl leading-relaxed">
-            A passionate developer focused on building robust backends and efficient software solutions. 
-            I love turning complex problems into clean, scalable code.
-        </p>
-        <div class="mt-10 flex gap-4">
-            <a href="#projects" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-bold transition">View My Work</a>
-            <a href="https://github.com/ziyadamr" target="_blank" class="border border-slate-700 hover:bg-slate-800 px-8 py-3 rounded-full font-bold transition">GitHub Profile</a>
+    </header>
+
+    <section id="skills" class="container section">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-brain"></i>
+                <h4>AI & Data</h4>
+                <ul>
+                    <li>Python [cite: 18]</li>
+                    <li>Pandas [cite: 20]</li>
+                    <li>Matplotlib [cite: 21]</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h4>Languages</h4>
+                <ul>
+                    <li>C++ [cite: 19]</li>
+                    <li>Python [cite: 18]</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-tools"></i>
+                <h4>Tools</h4>
+                <ul>
+                    <li>Docker [cite: 13]</li>
+                    <li>GitHub [cite: 14]</li>
+                    <li>VS Code [cite: 15]</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="max-w-6xl mx-auto px-6 py-24 border-t border-slate-800">
-        <div class="flex justify-between items-end mb-12">
-            <div>
-                <h3 class="text-3xl font-bold mb-2">Featured Projects</h3>
-                <p class="text-slate-400">Some of the things I've built lately.</p>
-            </div>
+    <section id="projects" class="container section">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-placeholder">
+            <p>Your innovative AI projects from page 5 will be displayed here[cite: 22].</p>
+            <i class="fas fa-rocket"></i>
         </div>
+    </section>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="group bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300">
-                <div class="text-blue-400 mb-6 text-4xl group-hover:scale-110 transition-transform"><i class="fas fa-terminal"></i></div>
-                <h4 class="text-2xl font-bold mb-3">System Automation Tool</h4>
-                <p class="text-slate-400 mb-6">A powerful CLI tool built to automate repetitive server tasks and optimize workflow efficiency.</p>
-                <div class="flex gap-3 text-xs font-mono text-blue-300 mb-6">
-                    <span class="bg-blue-900/30 px-3 py-1 rounded-full uppercase">Python</span>
-                    <span class="bg-blue-900/30 px-3 py-1 rounded-full uppercase">Docker</span>
-                </div>
-                <a href="https://github.com/ziyadamr" class="text-sm font-bold text-blue-400 hover:text-blue-300">REPOSITORY <i class="fas fa-arrow-right ml-1"></i></a>
+    <footer id="contact">
+        <div class="container footer-content">
+            <h2>Let's Connect</h2>
+            <p>Second-year CS Student | 2024-2028 [cite: 5, 9]</p>
+            <div class="social-icons">
+                <a href="https://github.com/ziyadamr" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" title="Khamasat"><i class="fas fa-briefcase"></i></a> <a href="mailto:ziyad@example.com"><i class="fas fa-envelope"></i></a>
             </div>
+            <p class="copyright">&copy; 2026 Ziyad Amr. All rights reserved.</p>
+        </div>
+    </footer>
 
-            <div class="group bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-emerald-500 transition duration-300">
-                <div class="text-emerald-400 mb-6 text-4xl group-hover:scale-110 transition-transform"><i class="fas fa-database"></i></div>
-                <h4 class="text-2xl font-bold mb-3">Data Processor API</h4>
-                <p class="text-slate-400 mb-6">High-performance RESTful API designed to handle large-scale data ingestion and real-time processing.</p>
-                <div class="flex gap-3 text-xs font-mono text-emerald-300 mb-6">
-                    <span class="bg-emerald-900/30 px-3 py-1 rounded-full uppercase">FastAPI</span>
-                    <span class="bg-emerald-900/30 px-3 py-1 rounded-full uppercase">PostgreSQL</span>
-                </div>
-                <a href="
+</body>
+</html>
