@@ -1,36 +1,44 @@
-const apiKey = ""; // Environment provided
+const apiKey = "AIzaSyAUOoerkNxJSbGw3kNZkVrpkaO-CBifON4"; // Environment provided
 
 // --- Gemini API Logic ---
 async function fetchGemini(prompt, systemInstruction = "") {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-  const payload = {
-    contents: [{ parts: [{ text: prompt }] }],
-    systemInstruction: systemInstruction
-      ? { parts: [{ text: systemInstruction }] }
-      : undefined,
-  };
-
-  for (let i = 0; i < 5; i++) {
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!response.ok) throw new Error("API Error");
-      const data = await response.json();
-      return (
-        data.candidates?.[0]?.content?.parts?.[0]?.text ||
-        "I couldn't generate a response."
-      );
-    } catch (err) {
-      const delay = Math.pow(2, i) * 1000;
-      await new Promise((resolve) => setTimeout(resolve, delay));
+    // الرابط الصحيح والمختبر للـ API
+const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    
+    const payload = {
+        contents: [{ parts: [{ text: prompt }] }]
+    };
+    
+    // إضافة الـ systemInstruction فقط إذا كانت موجودة
+    if (systemInstruction) {
+        payload.systemInstruction = { parts: [{ text: systemInstruction }] };
     }
-  }
-  return "Connection error. Please try again later.";
+    
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json' 
+            },
+            body: JSON.stringify(payload)
+        });
+        
+        if (!response.ok) {
+            // سطر يطبع تفاصيل الخطأ القادم من جوجل في الـ Console
+            const errorDetails = await response.json();
+            console.error("خطأ من جوجل:", errorDetails);
+            throw new Error(`Error: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        return data.candidates[0].content.parts[0].text;
+        
+    } catch (err) {
+        console.error("فشل الاتصال:", err);
+        return "Connection error. Please try again later.";
+        
+    }
 }
-
 // --- AI Chat Features ---
 const sysMsg =
   "You are the Digital Twin of Ziyad Amr, a Machine Learning Engineer. Your goal is to represent him professionally. His skills: Python, TensorFlow, Scikit-Learn, SQL. Education: Bachelor of CS (2020-2024). Projects: Sentiment Bot, Vision Monitor, Market Forecast. Be helpful, concise, and smart. If asked about contact, refer them to the contact section.";
@@ -75,7 +83,7 @@ async function generateTechFact() {
   const insightBox = document.getElementById("tech-insight");
   insightBox.innerText = "✨ Thinking...";
   const fact = await fetchGemini(
-    "Tell me one short, mind-blowing and professional fact about Machine Learning or AI in 2024."
+    "Tell me one short, mind-blowing and professional fact about Machine Learning or AI in 2026."
   );
   insightBox.innerText = fact;
 }
@@ -103,9 +111,13 @@ function handleContact() {
 
 // --- Static Initializers ---
 AOS.init({ duration: 1000, once: true });
+AOS.init({ 
+    duration: 800, // مدة الحركة بالملي ثانية
+    once: true     // تشغيل الحركة مرة واحدة فقط عند النزول
+});
 
 new Typed("#typed-text", {
-  strings: ["Machine Learning Engineer", "Data Scientist", "AI Researcher"],
+  strings: ["Machine Learning Engineer", "AI Enthusiast"],
   typeSpeed: 50,
   backSpeed: 30,
   backDelay: 1500,
@@ -145,7 +157,7 @@ const mobileLinks = document.querySelectorAll(".mobile-nav-link");
 menuBtn.addEventListener("click", () => {
   mobileMenu.classList.toggle("hidden");
 });
-
+// تشغيل مكتبة الحركات (Animate On Scroll)
 mobileLinks.forEach((link) => {
   link.addEventListener("click", () => {
     mobileMenu.classList.add("hidden");
