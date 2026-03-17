@@ -1,92 +1,388 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ziyad Amr | AI Engineer Portfolio</title>
+    <title>Ziyad Amr | Machine Learning Engineer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
 </head>
+
 <body>
 
-    <nav>
-        <div class="container navbar">
-            <div class="logo">ZIYAD AMR</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Header / Navigation -->
+    <header class="fixed w-full z-50 top-0 left-0">
+        <div class="w-full px-8 py-4 flex justify-between items-center">
+            <a href="#home" class="logo"><img src="logo.png" alt="logo" sizes="5px"><span class="text-white"></span></a>
 
-    <header id="about" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="profile-placeholder">👨‍💻</div>
-                <h1>Hi, I'm <span>Ziyad Amr</span></h1>
-                <h3>AI Engineer & CS Student</h3>
-                <p>A second-year Computer Science student at Misr Higher Institute for Commerce & Computers[cite: 5, 9]. I am passionate about the endless possibilities of Artificial Intelligence, focusing on solving complex problems and building smart systems[cite: 5, 6].</p>
-                <div class="hero-btns">
-                    <a href="https://github.com/ziyadamr" target="_blank" class="btn primary-btn"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
-                </div>
-            </div>
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex space-x-8 text-[11px] font-bold uppercase tracking-widest">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Social & Mobile Toggle -->
+            <div class="flex items-center space-x-6"></div>
+            <button id="menu-btn" class="lg:hidden text-white text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-slate-900 border-b border-white/10 px-6 py-6 flex flex-col space-y-4 text-sm font-bold uppercase tracking-widest">
+            <a href="#home" class="mobile-nav-link text-white hover:text-sky-400">Home</a>
+            <a href="#about" class="mobile-nav-link text-white hover:text-sky-400">About</a>
+            <a href="#education" class="mobile-nav-link text-white hover:text-sky-400">Education</a>
+            <a href="#skills" class="mobile-nav-link text-white hover:text-sky-400">Skills</a>
+            <a href="#projects" class="mobile-nav-link text-white hover:text-sky-400">Projects</a>
+            <a href="#services" class="mobile-nav-link text-white hover:text-sky-400">Services</a>
+            <a href="#contact" class="mobile-nav-link text-white hover:text-sky-400">Contact</a>
         </div>
     </header>
 
-    <section id="skills" class="container section">
-        <h2 class="section-title">Technical Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fas fa-brain"></i>
-                <h4>AI & Data</h4>
-                <ul>
-                    <li>Python [cite: 18]</li>
-                    <li>Pandas [cite: 20]</li>
-                    <li>Matplotlib [cite: 21]</li>
-                </ul>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-code"></i>
-                <h4>Languages</h4>
-                <ul>
-                    <li>C++ [cite: 19]</li>
-                    <li>Python [cite: 18]</li>
-                </ul>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-tools"></i>
-                <h4>Tools</h4>
-                <ul>
-                    <li>Docker [cite: 13]</li>
-                    <li>GitHub [cite: 14]</li>
-                    <li>VS Code [cite: 15]</li>
-                </ul>
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+        <div id="particles-js"></div>
+        <div class="hero-content container mx-auto px-6" data-aos="zoom-out">
+            <!-- <h2 class="text-sky-400 text-lg mb-4 font-mono tracking-widest uppercase">Designing Intelligence</h2> -->
+            <h1 class="text-6xl md:text-9xl font-black mb-6 text-white leading-none">Ziyad Amr</h1>
+            <h3 class="text-2xl md:text-4xl text-slate-400 mb-10 font-light">
+                <span id="typed-text" class="gradient-text font-bold"></span>
+            </h3>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+                <a href="#projects" class="btn-primary px-10 py-4 rounded-full font-bold text-white shadow-xl">Explore
+                    My Work</a>
+                <button onclick="toggleAIChat()"
+                    class="bg-white/5 backdrop-blur-md border border-sky-400 px-10 py-4 rounded-full font-bold hover:bg-sky-400/20 transition flex items-center gap-2">
+                    <span>✨ Ask My Digital Twin</span>
+                </button>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="container section">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-placeholder">
-            <p>Your innovative AI projects from page 5 will be displayed here[cite: 22].</p>
-            <i class="fas fa-rocket"></i>
+    <!-- About Section -->
+    <section id="about" class="bg-slate-900/30">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000">
+                        </div>
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=ZiyadML" alt="Ziyad Amr Profile"
+                            class="relative rounded-3xl w-full max-w-sm aspect-square object-cover grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl mx-auto">
+                    </div>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <h2 class="text-4xl font-bold mb-8">Engineering the <span class="text-sky-400">Future</span></h2>
+                    <p class="text-slate-400 leading-relaxed text-xl mb-8">
+                        Hello I'm Ziyad Amr, a Machine Learning Engineer driven by the challenge of turning complex data into
+                        intelligent solutions. I specialize in building scalable AI systems that don't just process
+                        information, but solve real-world problems with precision and efficiency.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-sky-400/10 flex items-center justify-center text-sky-400">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <span class="text-slate-300 font-medium">Machine Learning</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-indigo-400/10 flex items-center justify-center text-indigo-400">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <span class="text-slate-300 font-medium">Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="container footer-content">
-            <h2>Let's Connect</h2>
-            <p>Second-year CS Student | 2024-2028 [cite: 5, 9]</p>
-            <div class="social-icons">
-                <a href="https://github.com/ziyadamr" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" title="Khamasat"><i class="fas fa-briefcase"></i></a> <a href="mailto:ziyad@example.com"><i class="fas fa-envelope"></i></a>
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-16 text-center" data-aos="fade-up">Education</h2>
+            <div class="max-w-3xl mx-auto border-l-2 border-slate-800 ml-4 md:ml-auto relative">
+                <div class="mb-12 ml-8 timeline-item relative" data-aos="fade-left">
+                    <span class="text-sky-400 font-mono text-sm">2024 - 2028</span>
+                    <h3 class="text-2xl font-bold text-white mt-1">Bachelor of Computer Science</h3>
+                    <h4 class="text-slate-400 font-medium mb-4">Misr Higher Institute for Commerce & Computers (MET)
+                    </h4>
+                    <h3 class="text-slate-400 font-medium mb-4">GPA : Good</h3>
+                </div>
             </div>
-            <p class="copyright">&copy; 2026 Ziyad Amr. All rights reserved.</p>
         </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-slate-900/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4" data-aos="fade-up">Techcnical Skills</h2>
+                <!-- <div class="mt-4 inline-block bg-sky-400/10 border border-sky-400/20 px-4 py-2 rounded-full cursor-pointer hover:bg-sky-400/20 transition"
+                    onclick="generateTechFact()">
+                    <span class="text-sky-400 text-sm">✨ Generate AI Tech Insight</span>
+                </div> -->
+                <p id="tech-insight" class="mt-4 text-slate-400 italic text-sm min-h-[1.5rem]"></p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl card-hover text-center"
+                    data-aos="fade-up">
+                    <i class="fab fa-python text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="font-bold">Python</h3>
+                </div>
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl card-hover text-center"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-microchip text-5xl text-orange-400 mb-4"></i>
+                    <h3 class="font-bold">TensorFlow</h3>
+                </div>
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl card-hover text-center"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-flask text-5xl text-emerald-400 mb-4"></i>
+                    <h3 class="font-bold">Scikit-Learn</h3>
+                </div>
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-2xl card-hover text-center"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-server text-5xl text-sky-400 mb-4"></i>
+                    <h3 class="font-bold">SQL / NoSQL</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center justify-center text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4" data-aos="fade-up">Projects</h2>
+                <!-- <button onclick="generateProjectIdea()" class="text-sky-400 hover:text-white transition flex items-center gap-2 text-sm">
+                <span>✨ Suggest New Project Idea</span>
+            </button> -->
+            </div>
+            <!-- <div id="project-idea-box"
+                class="hidden mb-8 p-6 bg-sky-400/5 border border-sky-400/20 rounded-3xl animate-pulse-slow">
+                <h4 class="text-sky-400 font-bold mb-2">AI Suggestion:</h4>
+                <p id="project-idea-text" class="text-slate-300"></p>
+            </div> -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-slate-900 rounded-3xl overflow-hidden border border-white/5 group card-hover"
+                    data-aos="fade-up">
+                    <div class="h-48 bg-sky-950 flex items-center justify-center relative group">
+                        <i class="fas fa-project-diagram text-sky-500 text-6xl opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-sky-400">Sentiment Bot</h3>
+                        <p class="text-slate-500 text-sm">BERT-based emotion analysis for customer feedback.</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-slate-900 rounded-3xl overflow-hidden border border-white/5 group card-hover"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-purple-950 flex items-center justify-center">
+                        <i class="fas fa-eye text-purple-500 text-6xl opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-purple-400">Vision Monitor</h3>
+                        <p class="text-slate-500 text-sm">Real-time object detection using YOLOv8.</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-slate-900 rounded-3xl overflow-hidden border border-white/5 group card-hover"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-emerald-950 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-emerald-500 text-6xl opacity-30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-emerald-400">Market Forecast</h3>
+                        <p class="text-slate-500 text-sm">Stock price prediction using LSTM networks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-slate-900/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-16 text-center" data-aos="fade-up">Services</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-3xl hover:border-sky-400 transition"
+                    data-aos="zoom-in">
+                    <div
+                        class="w-12 h-12 bg-sky-400/10 text-sky-400 rounded-xl flex items-center justify-center mb-6 text-xl">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Model Dev</h3>
+                    <p class="text-slate-500 text-sm">End-to-end development of custom ML and AI models.</p>
+                </div>
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-3xl hover:border-indigo-400 transition"
+                    data-aos="zoom-in" data-aos-delay="100">
+                    <div
+                        class="w-12 h-12 bg-indigo-400/10 text-indigo-400 rounded-xl flex items-center justify-center mb-6 text-xl">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Data Insights</h3>
+                    <p class="text-slate-500 text-sm">Deep exploratory data analysis and visualization.</p>
+                </div>
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-3xl hover:border-purple-400 transition"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <div
+                        class="w-12 h-12 bg-purple-400/10 text-purple-400 rounded-xl flex items-center justify-center mb-6 text-xl">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cloud MLOps</h3>
+                    <p class="text-slate-500 text-sm">Deploying models to AWS/GCP for production use.</p>
+                </div>
+                <div class="p-8 bg-slate-900 border border-white/5 rounded-3xl hover:border-emerald-400 transition"
+                    data-aos="zoom-in" data-aos-delay="300">
+                    <div
+                        class="w-12 h-12 bg-emerald-400/10 text-emerald-400 rounded-xl flex items-center justify-center mb-6 text-xl">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI Strategy</h3>
+                    <p class="text-slate-500 text-sm">Consulting on AI implementation for businesses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background-color: var(--bg-main);">
+        <div class="contact-box bg-slate-900 p-12 rounded-[40px] border border-white/5 shadow-2xl relative overflow-hidden"
+            data-aos="zoom-in">
+            <div class="container mx-auto px-6 max-w-5xl text-center">
+
+                <h2 class="section-title mb-12" data-aos="fade-up">Get In Touch</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <a href="mailto:ziyadamr20@gmail.com" class="contact-link-card">
+                        <i class="fas fa-envelope"></i>
+                        <span class="font-medium text-sm">Email</span>
+                    </a>
+
+                    <a href="https://wa.me/+201552786868" class="contact-link-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="font-medium text-sm">Phone / WhatsApp</span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/ziyadamr/" class="contact-link-card">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="font-medium text-sm">LinkedIn</span>
+                    </a>
+
+                    <a href="https://mostaql.com/u/Ziyad_Amr" class="contact-link-card">
+                        <i class="fas fa-briefcase"></i>
+                        <span class="font-medium text-sm">Mostaql</span>
+                    </a>
+
+                    <a href="https://www.upwork.com/freelancers/~01921add443239243f?mp_source=share"
+                        class="contact-link-card">
+                        <i class="fa-brands fa-upwork"></i>
+                        <span class="font-medium text-sm">Upwork</span>
+                    </a>
+
+                    <a href="https://khamsat.com/user/ziyadamr1" class="contact-link-card">
+                        <i class="fas fa-briefcase"></i>
+                        <span class="font-medium text-sm">Khamsat</span>
+                    </a>
+                </div>
+
+                <div class="absolute top-0 right-0 w-64 h-64 bg-sky-500/5 blur-[80px]"></div>
+
+                <form class="space-y-6 max-w-2xl mx-auto relative z-10">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" id="contact-name"
+                            class="w-full bg-slate-800/50 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-sky-400 transition-colors"
+                            placeholder="Name">
+                        <input type="email" id="contact-email"
+                            class="w-full bg-slate-800/50 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-sky-400 transition-colors"
+                            placeholder="Email">
+                    </div>
+                    <textarea id="contact-msg" rows="4"
+                        class="w-full bg-slate-800/50 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-sky-400 transition-colors"
+                        placeholder="Message"></textarea>
+
+                    <button type="button" onclick="handleContact()"
+                        class="w-full btn-primary py-5 rounded-2xl font-bold uppercase tracking-widest text-white shadow-lg">
+                        Send Message
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+    <!-- AI Chat Interface -->
+    <div id="ai-chat-container">
+        <!-- Floating Action Button -->
+        <button id="ai-fab" onclick="toggleAIChat()"
+            class="w-14 h-14 bg-sky-500 rounded-full shadow-2xl flex items-center justify-center text-white text-xl hover:scale-110 transition-transform">
+            <i class="fas fa-robot"></i>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="ai-chat-window" class="flex flex-col">
+            <div class="bg-sky-600 p-4 flex justify-between items-center text-white">
+                <span class="font-bold flex items-center gap-2">✨ Ziyad's AI Twin</span>
+                <button onclick="toggleAIChat()"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 text-sm bg-slate-900/80">
+                <div class="bg-slate-800 p-3 rounded-2xl rounded-tl-none mr-8">
+                    Hi! I'm Ziyad's digital twin. Ask me anything about his projects, skills, or Machine Learning!
+                </div>
+            </div>
+            <div id="chat-typing" class="typing-indicator p-4">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="p-4 border-t border-white/10 bg-slate-900 flex gap-2">
+                <input type="text" id="chat-input"
+                    class="flex-1 bg-slate-800 border border-white/10 rounded-xl px-4 py-2 focus:outline-none focus:border-sky-400"
+                    placeholder="Type a message...">
+                <button onclick="sendMessage()"
+                    class="bg-sky-500 w-10 h-10 rounded-xl flex items-center justify-center text-white">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 text-center">
+        <div class="flex justify-center space-x-6 mb-8">
+            <a href="https://github.com/ziyadamr" class="text-slate-500 hover:text-sky-400 transition"><i
+                    class="fab fa-github text-xl"></i></a>
+            <a href="https://www.linkedin.com/in/ziyadamr/" class="text-slate-500 hover:text-sky-400 transition"><i
+                    class="fab fa-linkedin text-xl"></i></a>
+        </div>
+        <p class="text-slate-600 text-sm">Built with passion by <span class="text-sky-400 font-semibold">Ziyad
+                Amr</span> &copy; 2026</p>
     </footer>
-
+    <!-- JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
