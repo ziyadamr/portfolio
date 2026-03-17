@@ -1,4 +1,4 @@
-const apiKey = "AIzaSyAUOoerkNxJSbGw3kNZkVrpkaO-CBifON4"; // Environment provided
+const apiKey = ""; // Environment provided
 
 // --- Gemini API Logic ---
 async function fetchGemini(prompt, systemInstruction = "") {
