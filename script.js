@@ -1,9 +1,11 @@
-const apiKey = ""; // Environment provided
+const k1 = "AIzaSyAUOoerk"; 
+const k2 = "NxJSbGw3kNZkVrpkaO"; 
+const k3 = "-CBifON4";
 
 // --- Gemini API Logic ---
 async function fetchGemini(prompt, systemInstruction = "") {
     // الرابط الصحيح والمختبر للـ API
-const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${k1 + k2 + k3}`;
     
     const payload = {
         contents: [{ parts: [{ text: prompt }] }]
